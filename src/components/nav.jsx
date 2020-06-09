@@ -10,16 +10,15 @@ class Nav extends React.Component{
 
   render(){
     return (
-
       <ul className="nav nav-pills justify-content-end">
         <li className="nav-item">
-          <a className="nav-link" onClick={() => this.setView('view-cards')}>View Cards</a>
+          <a  className="nav-link" onClick={() => this.setView('view-cards')}>View Cards</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" onClick={() => this.setView('review-cards')}>Review</a>
+          <a  id='review' className="nav-link" onClick={() => this.setView('review-cards')}>Review</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" onClick={()=> this.setView('create-card')}>Create Card</a>
+          <a id='create' className="nav-link" onClick={()=> this.setView('create-card')}>Create Card</a>
         </li>
       </ul>
 
