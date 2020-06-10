@@ -10,7 +10,13 @@ class App extends React.Component {
     super(props)
     this.state = {
       view: 'view-cards',
-      cards: []
+      cards: [
+        {question: 'do you have a question?', answer: 'yes!'},
+        {question: 'whats going on?', answer: 'just working'},
+        {question: 'what time is it?', answer: '4:13'},
+        {question: 'what ya eating?', answwer: 'pizza'},
+        {question: 'what day is it?', answer: 'tuesday'}
+      ]
     }
     this.setView = this.setView.bind(this)
     this.addCard = this.addCard.bind(this)
@@ -28,7 +34,6 @@ class App extends React.Component {
   }
 
   addCard(card){
-    console.log('got it going')
     const currentDeck = this.state.cards.slice();
     currentDeck.push(card);
     this.setState({cards : currentDeck}, this.saveCards)
@@ -40,7 +45,7 @@ class App extends React.Component {
       case 'review-cards':
         return <ReviewCards />
       case 'view-cards':
-        return <ViewCards />
+        return <ViewCards cardsArray={this.state.cards}/>
       default:
         return <h1>An Internal Error Occured... lo siento</h1>
     }
